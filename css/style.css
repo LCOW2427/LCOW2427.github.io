@@ -1,8 +1,18 @@
+/* CSS reset */
+* {
+  /* margin: 0;
+  padding: 0; */
+  box-sizing: border-box;
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   background-color: #f4f4f4;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
 }
 
 header {
@@ -10,6 +20,9 @@ header {
   color: white;
   padding: 10px;
   height: 20vh;
+  /* margin: 10px 0; */
+  /* border-radius: 20px; */
+  /* box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2); */
   background: url('../images/banner.jpg') ;
   background-size: cover;
   background-repeat: no-repeat;
@@ -32,9 +45,12 @@ header img {
 nav {
   background-color: #ddd;
   padding: 10px;
+  margin: 0 0 10px;
+  text-align: center;
   display: flex;
   align-items: center;
   column-gap: 20px;
+  border: 1px solid #333;
 }
 
 nav ul {
@@ -49,19 +65,126 @@ nav ul li {
 
 nav ul li a {
   text-decoration: none;
-  color: black;
+  color: #115599;
 }
 
-main {
+/* main {
+  margin-bottom: 120px;
+} */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "DM Serif Display", serif;
+}
+
+h2 {
+  color: #115599;
+}
+
+.container {
+  /* max-width: 1200px; */
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
   padding: 20px;
+  /* Take remaining height of the page */
+  display: flex;
+  flex-direction: column;
+  min-height: calc(55vh);
 }
 
-footer {
-  background-color: #333;
+.cards-container img {
+  width: 400px;
+  max-height: 400px;
+  height: auto;
+  object-fit: cover;
+  object-position: bottom;
+  border-radius: 8px;
+}
+
+/* Banner div with a banner image in background and text on top of that */
+.banner {
+  background: url('../images/banner-2.jpg') ;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 25% 45%;
+  width: 100%;
   color: white;
   text-align: center;
+  padding: 100px 0;
+  margin: 20px 0;
+  flex-grow: 1;
+}
+
+.buy-button {
+  background-color: #115599;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  display: inline-block;
+  /* width: 100%; */
+  text-align: center;
+  text-decoration: none;
+
+}
+
+.banner-text {
+  font-size: 1.5em;
+  font-weight: bold;
+  background-color: #67a1df;
   padding: 10px;
-  position: fixed;
+  border-radius: 10px;
+  display: inline-block;
+  width: 70%;
+  opacity: 0.9;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.product-item {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  background-color: white;
+}
+
+.product-item img {
+  max-width: 400px;
+  max-height: 400px;
+  height: 50%;
+  object-fit: cover;
+  border: 1px solid #115599;
+  border-radius: 10px;
+  width: -webkit-fill-available;
+  width: fill-available;
+}
+
+.highlighted-product {
+  display: flex;
+}
+
+.highlighted-product > div {
+  padding: 10px;
+}
+
+
+footer {
+  /* background-color: #333; */
+  /* color: white; */
+  text-align: center;
+  padding: 10px;
+  /* position: fixed; */
   bottom: 0;
   width: 100%;
+  font-size: 0.8em;
+  margin-top: auto;
+  background-color: #ddd;
 }
