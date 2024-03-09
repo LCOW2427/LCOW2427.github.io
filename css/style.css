@@ -22,14 +22,14 @@ header {
   /* margin: 10px 0; */
   /* border-radius: 20px; */
   /* box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2); */
-  background: url('../images/banner.jpg') ;
+  background: url("../images/banner.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 25% 75%;
 }
 
 header img {
-  width: 100%;  /* This will make the image take the full width of its container */
+  width: 100%; /* This will make the image take the full width of its container */
   height: auto; /* This will keep the image's aspect ratio */
 }
 
@@ -82,7 +82,12 @@ nav ul li a:hover {
   margin-bottom: 120px;
 } */
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "DM Serif Display", serif;
   color: #115599;
 }
@@ -99,6 +104,17 @@ h1, h2, h3, h4, h5, h6 {
   min-height: calc(55vh);
 }
 
+.container h1,
+h2 {
+  display: bold;
+}
+
+.container p {
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-family: "Roboto", sans-serif;
+}
+
 .cards-container img {
   width: 500px;
   max-height: 400px;
@@ -110,7 +126,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Banner div with a banner image in background and text on top of that */
 .banner {
-  background: url('../images/banner-2.jpg') ;
+  background: url("../images/banner-2.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 25% 45%;
@@ -138,7 +154,6 @@ h1, h2, h3, h4, h5, h6 {
   /* width: 100%; */
   text-align: center;
   text-decoration: none;
-
 }
 
 .banner-text {
@@ -196,7 +211,6 @@ h1, h2, h3, h4, h5, h6 {
   padding-left: 0;
 }
 
-
 footer {
   /* background-color: #333; */
   /* color: white; */
@@ -224,7 +238,6 @@ footer {
     position: static;
     border: none;
   }
-
 
   nav ul {
     flex-direction: column;
@@ -272,5 +285,70 @@ footer {
 
   .highlighted-product .item-left {
     padding-left: 0;
+  }
+}
+
+/* Media queries for mobile */
+@media (max-width: 600px) {
+  
+  .container {
+    padding: 10px;
+  }
+
+  .container h1 {
+    font-size: 1.5rem;
+  }
+
+  .container h2 {
+    font-size: 1.2rem;
+  }
+
+  .container h1,h2,h3,h4,h5,h6 {
+    text-align: center;
+  }
+
+  .container p,
+  .container li {
+    font-size: 0.9rem;
+  }
+}
+
+/* Media queries for tablet */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .container {
+    padding: 15px;
+  }
+
+  .container h1 {
+    font-size: 2rem;
+  }
+
+  .container h2 {
+    font-size: 1.5rem;
+  }
+
+  .container p,
+  .container li {
+    font-size: 1.1rem;
+  }
+}
+
+/* Media queries for desktop */
+@media (min-width: 1025px) {
+  .container {
+    padding: 20px;
+  }
+
+  .container h1 {
+    font-size: 2.5rem;
+  }
+
+  .container h2 {
+    font-size: 2rem;
+  }
+
+  .container p,
+  .container li {
+    font-size: 1.3rem;
   }
 }

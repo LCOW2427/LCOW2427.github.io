@@ -1,0 +1,59 @@
+.team {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.team-member {
+  flex: 1 0 200px; /* Grow, don't shrink, and start at 200px wide */
+  margin: 15px;
+  text-align: center;
+}
+
+.team-member img {
+  border-radius: 50%;
+  width: 200px; /* Adjust as needed */
+  height: 200px; /* Adjust as needed */
+  object-fit: cover;
+}
+
+.team-member figcaption {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.team-member p {
+  font-style: italic;
+  color: #666;
+}
+
+aside {
+  background-color: #f9f9f9;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 5px;
+}
+
+aside h3 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+aside p {
+  color: #666;
+}
+
+aside a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+aside a:hover {
+  color: #0056b3;
+}
+
+@media (max-width: 600px) {
+  .team-member {
+    flex: 1 0 100%; /* On small screens, make each team member take up the full width */
+  }
+}
