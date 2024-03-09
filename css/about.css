@@ -1,0 +1,99 @@
+.container {
+  padding: 20px;
+}
+
+.container h1,
+.container h2 {
+  font-family: "DM Serif Display", serif;
+  font-weight: bold;
+}
+
+.container p,
+.container li {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.container ul {
+  padding-left: 20px;
+}
+
+.container span {
+  font-weight: bold;
+}
+
+.get-one-now-button:hover {
+  background-color: #0f4c81;
+}
+
+.get-one-now-button:active {
+  background-color: #0d3f6a;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.get-one-now-button:focus {
+  outline: none;
+  border: 2px solid #000;
+}
+
+/* Media queries for mobile */
+@media (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+
+  .container h1 {
+    font-size: 1.5rem;
+  }
+
+  .container h2 {
+    font-size: 1.2rem;
+  }
+
+  .container p,
+  .container li {
+    font-size: 0.9rem;
+  }
+}
+
+/* Media queries for tablet */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .container {
+    padding: 15px;
+  }
+
+  .container h1 {
+    font-size: 2rem;
+  }
+
+  .container h2 {
+    font-size: 1.5rem;
+  }
+
+  .container p,
+  .container li {
+    font-size: 1.1rem;
+  }
+}
+
+/* Media queries for desktop */
+@media (min-width: 1025px) {
+  .container {
+    padding: 20px;
+  }
+
+  .container h1 {
+    font-size: 2.5rem;
+  }
+
+  .container h2 {
+    font-size: 2rem;
+  }
+
+  .container p,
+  .container li {
+    font-size: 1.3rem;
+  }
+}
