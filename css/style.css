@@ -43,7 +43,6 @@ header img {
 
 nav {
   background-color: #ddd;
-  padding: 10px;
   margin: 0 0 10px;
   text-align: center;
   display: flex;
@@ -53,7 +52,31 @@ nav {
   position: sticky;
   top: 0;
   z-index: 100;
+  justify-content: space-between;
+  padding: 1rem;
+  flex-direction: row;
 }
+
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  order: 2;
+}
+
+
+.nav-links {
+  transition: max-height 0.3s;
+  max-height: 0;
+  overflow: hidden;
+}
+
+.nav-links.open {
+  max-height: 360px;
+}
+
 
 nav ul {
   list-style-type: none;
@@ -231,14 +254,7 @@ footer {
 
 /* Media queries for mobile viewport and make nav bar vertical menu */
 @media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    align-items: center;
-    row-gap: 0px;
-    padding: 0px;
-    position: static;
-    border: none;
-  }
+
 
   nav ul {
     flex-direction: column;
@@ -287,11 +303,14 @@ footer {
   .highlighted-product .item-left {
     padding-left: 0;
   }
+
+  .hamburger {
+    display: block;
+}
 }
 
 /* Media queries for mobile */
 @media (max-width: 600px) {
-  
   .container {
     padding: 10px;
   }
@@ -304,13 +323,29 @@ footer {
     font-size: 1.2rem;
   }
 
-  .container h1,h2,h3,h4,h5,h6 {
+  .container h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     text-align: center;
   }
 
   .container p,
   .container li {
     font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 769px) {
+  .hamburger {
+      display: none;
+  }
+
+  .nav-links {
+      max-height: none;
+      overflow: visible;
   }
 }
 
