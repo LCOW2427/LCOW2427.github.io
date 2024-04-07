@@ -1,0 +1,136 @@
+#contact,
+.contact-email-link {
+  text-align: center;
+}
+
+#contact a {
+  /* color: #666600; */
+  text-decoration: none;
+}
+
+.mobile {
+  display: block;
+}
+
+.tablet-desktop {
+  display: none;
+}
+
+.map-wrapper {
+  border: 2px solid #000;
+
+  width: 90%;
+  height: auto;
+  margin: auto;
+}
+
+.map {
+  width: 100%;
+}
+
+form {
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+form h1 {
+  text-align: center;
+  color: #333;
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form input[type="date"],
+form textarea,
+form select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+form input[type="radio"],
+form input[type="checkbox"] {
+  margin-right: 5px;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+form button[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+form button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+form button[type="reset"] {
+  background-color: #f44336;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+form button[type="reset"]:hover {
+  background-color: #f44336;
+}
+
+form label.radio, form label.checkbox{
+  display: inline-block;
+}
+
+form input[type="radio"] {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+/* Styles to show the contact form and information side by side above tablet view */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+#contact,
+#contact-form {
+  flex: 1 0 100%; /* By default, take 100% of the width */
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+@media (min-width: 768px) {
+  .mobile {
+    display: none;
+  }
+
+  .tablet-desktop {
+    display: block;
+  }
+
+  #contact,
+  #contact-form {
+    flex: 1; /* Take up equal width */
+  }
+
+  #contact-form form {
+    width: 90%;
+  }
+}

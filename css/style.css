@@ -22,7 +22,7 @@ header {
   /* margin: 10px 0; */
   /* border-radius: 20px; */
   /* box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2); */
-  background: url("../images/banner.jpg");
+  background: url("../media/banner.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 25% 75%;
@@ -52,6 +52,7 @@ nav {
   border: 1px solid #333;
   position: sticky;
   top: 0;
+  z-index: 100;
 }
 
 nav ul {
@@ -126,7 +127,7 @@ h2 {
 
 /* Banner div with a banner image in background and text on top of that */
 .banner {
-  background: url("../images/banner-2.jpg");
+  background: url("../media/banner-2.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 25% 45%;
@@ -349,6 +350,6 @@ footer {
 
   .container p,
   .container li {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
 }
