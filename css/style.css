@@ -336,6 +336,11 @@ footer {
   .container li {
     font-size: 0.9rem;
   }
+
+  .cards-container img {
+    width: 100%;
+
+  }
 }
 
 @media (min-width: 769px) {
