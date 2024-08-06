@@ -98,3 +98,25 @@ nav {
   border-radius: 5px;
   cursor: pointer;
 }
+
+/* Cart details background color */
+.cart-details {
+  background-color: #fbfbfb; 
+}
+
+/* Cart item padding and margin */
+.cart-item {
+  padding: 15px; /
+  margin-bottom: 10px;
+}
+
+/* Product name font size and weight */
+.cart-item p:first-child { 
+  font-size: 16px; 
+  font-weight: 500; 
+}
+
+/* Cart button hover color */
+.cart-action-button:hover {
+  background-color: #777; 
+}
