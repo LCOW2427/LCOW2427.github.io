@@ -64,9 +64,16 @@ function addToCart(productId) {
         .then(products => {
             const product = products.find(p => p.id === productId);
             if (product) {
-                cart.push(product);
+                const existingProduct = cart.find(item => item.id === productId);
+                if (existingProduct) {
+                    existingProduct.quantity += 1;
+                } else {
+                    product.quantity = 1;
+                    cart.push(product);
+                }
                 showCartPopup();
                 updateCartDetails();
+                toggleCartDetails(true); // Open cart details
             }
         })
         .catch(error => console.error('Error fetching the product:', error));
@@ -75,15 +82,20 @@ function addToCart(productId) {
 function showCartPopup() {
     const cartPopup = document.getElementById('cart-popup');
     cartPopup.classList.remove('hidden');
+    cartPopup.style.display = 'block';
     setTimeout(() => {
         cartPopup.classList.add('hidden');
+        cartPopup.style.display = 'none';
     }, 2000);
 }
 
-function toggleCartDetails() {
-    console.log('toggling class details');
+function toggleCartDetails(forceOpen = false) {
     const cartDetails = document.getElementById('cart-details');
-    cartDetails.classList.toggle('show');
+    if (forceOpen) {
+        cartDetails.classList.add('show');
+    } else {
+        cartDetails.classList.toggle('show');
+    }
 }
 
 function updateCartDetails() {
@@ -93,15 +105,31 @@ function updateCartDetails() {
 
     let total = 0;
     cart.forEach(item => {
-        total += item.price;
+        total += item.price * item.quantity;
         const cartItem = document.createElement('div');
         cartItem.classList.add('cart-item');
         cartItem.innerHTML = `
             <p>${item.name}</p>
-            <p>$${item.price.toFixed(2)}</p>
+            <div class="quantity-controls">
+                <button onclick="changeQuantity(${item.id}, -1)">-</button>
+                <span>${item.quantity}</span>
+                <button onclick="changeQuantity(${item.id}, 1)">+</button>
+            </div>
+            <p>$${(item.price * item.quantity).toFixed(2)}</p>
         `;
         cartItemsContainer.appendChild(cartItem);
     });
 
     cartTotalElement.textContent = total.toFixed(2);
+}
+
+function changeQuantity(productId, change) {
+    const product = cart.find(item => item.id === productId);
+    if (product) {
+        product.quantity += change;
+        if (product.quantity <= 0) {
+            cart = cart.filter(item => item.id !== productId);
+        }
+        updateCartDetails();
+    }
 }
