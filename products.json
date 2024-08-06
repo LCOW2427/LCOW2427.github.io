@@ -1,0 +1,30 @@
+[
+  {
+      "id": 1,
+      "name": "Classic Fry Pan",
+      "description": "A versatile frying pan for everyday cooking.",
+      "price": 29.99,
+      "image": "pan-3.jpg"
+  },
+  {
+      "id": 2,
+      "name": "Golden Fry Pan",
+      "description": "This pan is perfect for frying eggs, pancakes, and more. Its non-stick surface ensures easy cooking and cleaning.",
+      "price": 39.99,
+      "image": "pan-1.jpg"
+  },
+  {
+      "id": 3,
+      "name": "Platinum Fry Pan",
+      "description": "With a larger surface area, this pan is great for cooking for the whole family. Its durable construction ensures it will last for years.",
+      "price": 49.99,
+      "image": "pan-2.jpg"
+  },
+  {
+      "id": 4,
+      "name": "Cast iron skillet pan",
+      "description": "Our cast iron skillet pan is perfect for cooking meats and vegetables. Its non-stick surface ensures easy cooking and cleaning.",
+      "price": 79.99,
+      "image": "pan-4.jpg"
+  }
+]
