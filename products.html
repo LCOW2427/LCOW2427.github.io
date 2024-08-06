@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FryItGolden: Products</title>
@@ -10,70 +10,57 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/products.css" />
     <link rel="shortcut icon" href="media/favicon.ico" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="media/favicon-32.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      type="image/png"
-      sizes="180x180"
-      href="media/apple-touch-icon.png"
-    />
+    <link rel="icon" type="image/png" sizes="32x32" href="media/favicon-32.png" />
+    <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="media/apple-touch-icon.png" />
     <link rel="icon" sizes="192x192" href="media/android-chrome-192.png" />
     <link rel="icon" sizes="512x512" href="media/android-chrome-512.png" />
     <script src="scripts/products.js" defer></script>
-  </head>
-  <body>
+</head>
+<body>
     <header>
-      <!-- <img src="media/banner.jpg" alt="Company Banner"> -->
+        <!-- <img src="media/banner.jpg" alt="Company Banner"> -->
     </header>
     <nav>
-      <button type="button" class="hamburger">&#9776;</button>
-      <a href="index.html"
-        ><img class="logo-img" src="media/logo.png" alt="Company Logo"
-      /></a>
-      <ul class="nav-links">
-        <li><button>Cart</button></li>
-      </ul>
+        <button type="button" class="hamburger">&#9776;</button>
+        <a href="index.html">
+            <img class="logo-img" src="media/logo.png" alt="Company Logo" />
+        </a>
+        <ul class="nav-links">
+            <li><button type="button" id="cart-button">Cart</button></li>
+        </ul>
     </nav>
     <main>
-      <div class="container">
-        <div class="cards-container">
-          <div class="card" id="product-of-the-week">
-            <h2>Product of the Week</h2>
-            <div class="highlighted-product"></div>
-          </div>
-          <div class="card" id="weekly-special-items">
-            <h2>Other Products</h2>
-            <div class="product-grid"></div>
-          </div>
+        <div class="container">
+            <div class="cards-container">
+                <div class="card" id="product-of-the-week">
+                    <h2>Product of the Week</h2>
+                    <div class="highlighted-product"></div>
+                </div>
+                <div class="card" id="weekly-special-items">
+                    <h2>Other Products</h2>
+                    <div class="product-grid"></div>
+                </div>
+            </div>
+            <div id="cart-popup" class="cart-popup hidden">
+                <p>Item added to cart</p>
+            </div>
+            <div id="cart-details" class="cart-details hidden">
+                <div class="cart-header">
+                    <h2>Your Cart</h2>
+                    <button id="close-cart">✖</button>
+                </div>
+                <div class="cart-items"></div>
+                <div class="cart-footer">
+                    <p>Total: $<span id="cart-total">0.00</span></p>
+                    <button id="checkout-button">Checkout</button>
+                </div>
+            </div>
         </div>
-        <div id="cart-popup" class="cart-popup hidden">
-          <p>Item added to cart</p>
-        </div>
-        <div id="cart-details" class="cart-details hidden">
-          <div class="cart-header">
-            <h2>Your Cart</h2>
-            <button id="close-cart">Close</button>
-          </div>
-          <div class="cart-items"></div>
-          <div class="cart-footer">
-            <p>Total: $<span id="cart-total">0.00</span></p>
-            <button id="checkout-button">Checkout</button>
-          </div>
-        </div>
-      </div>
     </main>
     <footer>
-      <p>Copyright 2099. All rights reserved.</p>
-      <p>
-        Request Information:
-        <a href="mailto:c0932097@mylambton.ca">c0932097@mylambton.ca</a>
-      </p>
-      <p>Mousam Dhakal (c0932097)</p>
+        <p>Copyright 2099. All rights reserved.</p>
+        <p>Request Information: <a href="mailto:c0932097@mylambton.ca">c0932097@mylambton.ca</a></p>
+        <p>Mousam Dhakal (c0932097)</p>
     </footer>
-  </body>
+</body>
 </html>

@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .catch(error => console.error('Error fetching the products:', error));
 
     // Add event listener to cart button
-    const cartButton = document.querySelector('.nav-links button');
+    const cartButton = document.getElementById('cart-button');
     cartButton.addEventListener('click', () => {
         toggleCartDetails();
     });
@@ -81,6 +81,7 @@ function showCartPopup() {
 }
 
 function toggleCartDetails() {
+    console.log('toggling class details');
     const cartDetails = document.getElementById('cart-details');
     cartDetails.classList.toggle('show');
 }
