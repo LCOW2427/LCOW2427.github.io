@@ -45,7 +45,7 @@ function displayProducts(products) {
     const productOfTheWeek = products[0];
     productOfTheWeekContainer.innerHTML = `
         <div class="item-left">
-            <img src="media/${productOfTheWeek.image}" alt="${productOfTheWeek.name}">
+            <img src="../media/${productOfTheWeek.image}" alt="${productOfTheWeek.name}">
         </div>
         <div class="item-right">
             <h3>${productOfTheWeek.name}</h3>
@@ -62,7 +62,7 @@ function displayProducts(products) {
         const productItem = document.createElement('div');
         productItem.classList.add('product-item');
         productItem.innerHTML = `
-            <img src="media/${product.image}" alt="${product.name}">
+            <img src="../media/${product.image}" alt="${product.name}">
             <div class="product-text">
                 <h3>${product.name}</h3>
                 <p>${product.description}</p>
