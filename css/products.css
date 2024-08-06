@@ -89,7 +89,7 @@ nav {
   display: none;
 }
 
-button#cart-button {
+.cart-action-button {
   background-color: #9494b2;
   border: none;
   color: white;

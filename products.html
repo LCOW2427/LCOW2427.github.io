@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FryItGolden: Products</title>
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+        @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
     </style>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/products.css" />
@@ -18,7 +18,7 @@
     <script src="scripts/products.js" defer></script>
 </head>
 <body>
-    <header>
+     <header>
         <!-- <img src="media/banner.jpg" alt="Company Banner"> -->
     </header>
     <nav>
@@ -27,7 +27,7 @@
             <img class="logo-img" src="media/logo.png" alt="Company Logo" />
         </a>
         <ul class="nav-links">
-            <li><button type="button" id="cart-button">Cart</button></li>
+            <li><button class="cart-action-button" type="button" id="cart-button">Cart</button></li>
         </ul>
     </nav>
     <main>
@@ -52,8 +52,10 @@
                 </div>
                 <div class="cart-items"></div>
                 <div class="cart-footer">
-                    <p>Total: $<span id="cart-total">0.00</span></p>
-                    <button id="checkout-button">Checkout</button>
+                    <p>Total (before tax): $<span id="cart-total">0.00</span></p>
+                    <p>Tax (10%): $<span id="cart-tax">0.00</span></p>
+                    <p>Total (after tax): $<span id="cart-total-tax">0.00</span></p>
+                    <button type="button" class="cart-action-button" id="checkout-button">Checkout</button>
                 </div>
             </div>
         </div>

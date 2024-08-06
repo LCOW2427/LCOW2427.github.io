@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', () => {
     fetch('products.json')
         .then(response => response.json())
@@ -5,6 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
             displayProducts(products);
         })
         .catch(error => console.error('Error fetching the products:', error));
+
+    // Load cart from localStorage
+    loadCart();
 
     // Add event listener to cart button
     const cartButton = document.getElementById('cart-button');
@@ -20,6 +24,18 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 let cart = [];
+
+function loadCart() {
+    const storedCart = localStorage.getItem('cart');
+    if (storedCart) {
+        cart = JSON.parse(storedCart);
+        updateCartDetails();
+    }
+}
+
+function saveCart() {
+    localStorage.setItem('cart', JSON.stringify(cart));
+}
 
 function displayProducts(products) {
     const productOfTheWeekContainer = document.querySelector('.highlighted-product');
@@ -74,6 +90,7 @@ function addToCart(productId) {
                 showCartPopup();
                 updateCartDetails();
                 toggleCartDetails(true); // Open cart details
+                saveCart();
             }
         })
         .catch(error => console.error('Error fetching the product:', error));
@@ -101,6 +118,8 @@ function toggleCartDetails(forceOpen = false) {
 function updateCartDetails() {
     const cartItemsContainer = document.querySelector('.cart-items');
     const cartTotalElement = document.getElementById('cart-total');
+    const cartTaxElement = document.getElementById('cart-tax');
+    const cartTotalTaxElement = document.getElementById('cart-total-tax');
     cartItemsContainer.innerHTML = '';
 
     let total = 0;
@@ -120,7 +139,12 @@ function updateCartDetails() {
         cartItemsContainer.appendChild(cartItem);
     });
 
+    const tax = total * 0.1; // 10% tax
+    const totalWithTax = total + tax;
+
     cartTotalElement.textContent = total.toFixed(2);
+    cartTaxElement.textContent = tax.toFixed(2);
+    cartTotalTaxElement.textContent = totalWithTax.toFixed(2);
 }
 
 function changeQuantity(productId, change) {
@@ -131,5 +155,6 @@ function changeQuantity(productId, change) {
             cart = cart.filter(item => item.id !== productId);
         }
         updateCartDetails();
+        saveCart();
     }
 }
