@@ -37,53 +37,51 @@ function saveCart() {
 }
 
 function displayProducts(products) {
-  const productOfTheWeekContainer = document.querySelector(
-    ".highlighted-product"
-  );
-  const weeklySpecialItemsContainer = document.querySelector(".product-grid");
+    const productOfTheWeekContainer = document.querySelector(".highlighted-product");
+    const weeklySpecialItemsContainer = document.querySelector(".product-grid");
 
-  // Display Product of the Week product with isProductOfTheWeek = true
-  const productOfTheWeek = products.find(
-    (product) => product.isProductOfTheWeek
-  );
-  productOfTheWeekContainer.innerHTML = `
-        <div class="item-left">
-            <img src="../media/${productOfTheWeek.image}" alt="${
-    productOfTheWeek.name
-  }">
-        </div>
-        <div class="item-right">
-            <h3>${productOfTheWeek.name}</h3>
-            <p>${productOfTheWeek.description}</p>
-            <p class="price">$${productOfTheWeek.price.toFixed(2)}</p>
-            <button class="buy-button" onclick="addToCart(${
-              productOfTheWeek.id
-            })">Add to Cart</button>
-        </div>
-    `;
+    // Display Product of the Week product with isProductOfTheWeek = true
+    const productOfTheWeek = products.find(product => product.isProductOfTheWeek);
 
-  const productsToDisplay = products.filter(
-    (product) => !product.isProductOfTheWeek
-  );
+    if (productOfTheWeek) {
+        const originalPrice = productOfTheWeek.price;
+        const discountedPrice = (originalPrice * 0.6).toFixed(2); // 40% discount
 
-  // Display Other products
-  productsToDisplay.forEach((product) => {
-    const productItem = document.createElement("div");
-    productItem.classList.add("product-item");
-    productItem.innerHTML = `
+        productOfTheWeekContainer.innerHTML = `
+            <div class="item-left">
+                <img src="../media/${productOfTheWeek.image}" alt="${productOfTheWeek.name}">
+            </div>
+            <div class="item-right">
+                <h3>${productOfTheWeek.name}</h3>
+                <p>${productOfTheWeek.description}</p>
+                <p class="price">
+                    <span class="original-price">$${originalPrice.toFixed(2)}</span>
+                    <span class="discounted-price">$${discountedPrice}</span>
+                </p>
+                <button class="buy-button" onclick="addToCart(${productOfTheWeek.id})">Add to Cart</button>
+            </div>
+        `;
+    }
+
+    const productsToDisplay = products.filter(product => !product.isProductOfTheWeek);
+
+    // Display other products
+    productsToDisplay.forEach(product => {
+        const productItem = document.createElement("div");
+        productItem.classList.add("product-item");
+        productItem.innerHTML = `
             <img src="../media/${product.image}" alt="${product.name}">
             <div class="product-text">
                 <h3>${product.name}</h3>
                 <p>${product.description}</p>
                 <p class="price">$${product.price.toFixed(2)}</p>
-                <button class="buy-button" onclick="addToCart(${
-                  product.id
-                })">Add to Cart</button>
+                <button class="buy-button" onclick="addToCart(${product.id})">Add to Cart</button>
             </div>
         `;
-    weeklySpecialItemsContainer.appendChild(productItem);
-  });
+        weeklySpecialItemsContainer.appendChild(productItem);
+    });
 }
+
 
 function addToCart(productId) {
   fetch("products.json")

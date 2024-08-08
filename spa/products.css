@@ -211,3 +211,23 @@ nav ul li {
   font-size: 1rem;
   font-weight: bold;
 }
+
+/* Original price with strikethrough */
+.original-price {
+  text-decoration: line-through;
+  color: #888;
+  margin-right: 10px;
+}
+
+/* Discounted price in red */
+.discounted-price {
+  color: #e63946;
+  font-weight: bold;
+}
+
+/* Product of the Week styles */
+.highlighted-product .item-right .price {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
