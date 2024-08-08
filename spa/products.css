@@ -5,7 +5,7 @@
   left: 20px;
   background-color: #4caf50;
   color: white;
-  padding: 10px;
+  padding: 0px 20px;
   border-radius: 5px;
   display: none; /* Initially hidden */
   z-index: 10;
@@ -20,7 +20,7 @@ nav {
   position: fixed;
   top: 0;
   right: 0;
-  width: 300px;
+  width: 350px;
   height: 100%;
   background-color: white;
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
@@ -119,4 +119,95 @@ nav {
 /* Cart button hover color */
 .cart-action-button:hover {
   background-color: #777; 
+}
+
+.nav-links {
+  max-height: none;
+  overflow: visible;
+}
+
+nav ul li {
+  border-bottom: 0px;
+}
+
+@media (max-width: 768px) {
+  nav ul {
+      flex-direction: row;
+      justify-content: flex-end;
+  }
+}
+
+/* Cart details */
+.cart-details {
+  background-color: #ffffff; 
+  padding: 20px;
+  box-shadow: -3px 0 8px rgba(0, 0, 0, 0.3);
+  overflow-y: auto;
+  border-radius: 8px 0 0 8px;
+}
+
+/* Cart item styles */
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 15px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.cart-item p {
+  margin: 0;
+  font-weight: bold;
+  flex: 1;
+}
+
+/* Quantity controls */
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.quantity-controls button {
+  background-color: #6c757d;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.quantity-controls button:hover {
+  background-color: #555;
+}
+
+/* Remove button */
+.remove-button {
+  background-color: #dc3545;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.remove-button:hover {
+  background-color: #c82333;
+}
+
+/* Footer styling */
+.cart-footer {
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-top: 1px solid #ddd;
+  text-align: right;
+}
+
+.cart-footer p {
+  margin: 5px 0;
+  font-size: 1rem;
+  font-weight: bold;
 }

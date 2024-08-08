@@ -2,7 +2,7 @@
   {
       "id": 1,
       "name": "Classic Fry Pan",
-      "description": "A versatile frying pan for everyday cooking.",
+      "description": "A versatile frying pan for everyday cooking Adapts to wide rande of schenarios, from frying to sauteing. .",
       "price": 29.99,
       "image": "pan-3.jpg"
   },
@@ -11,7 +11,8 @@
       "name": "Golden Fry Pan",
       "description": "This pan is perfect for frying eggs, pancakes, and more. Its non-stick surface ensures easy cooking and cleaning.",
       "price": 39.99,
-      "image": "pan-1.jpg"
+      "image": "pan-1.jpg",
+      "isProductOfTheWeek": true
   },
   {
       "id": 3,
